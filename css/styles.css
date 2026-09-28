@@ -661,17 +661,69 @@ h3 {
 }
 
 .site-footer {
-  padding: 44px 6vw;
+  padding: 58px 6vw 28px;
   color: rgba(255, 255, 255, 0.72);
-  background: #001a2a;
+  background:
+    linear-gradient(135deg, rgba(0, 26, 42, 0.98), rgba(0, 43, 69, 0.96)),
+    radial-gradient(circle at 90% 0%, rgba(46, 125, 50, 0.28), transparent 30%);
+  border-top: 5px solid var(--green);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.4fr) repeat(3, minmax(170px, 1fr));
+  gap: 34px;
+  align-items: start;
 }
 
 .footer-logo {
-  width: min(280px, 74vw);
+  width: min(330px, 74vw);
   height: auto;
   display: block;
   margin-bottom: 18px;
   filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.35));
+}
+
+.footer-brand p,
+.footer-contact p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.footer-column {
+  display: grid;
+  gap: 10px;
+}
+
+.footer-column h3 {
+  margin-bottom: 8px;
+  color: var(--white);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-column a:hover {
+  color: #9ddb8d;
+  transform: translateX(4px);
+}
+
+.footer-contact strong {
+  color: var(--white);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 42px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.56);
 }
 
 .team {
@@ -821,6 +873,7 @@ h3 {
   .intro-grid,
   .two-column,
   .contact-card,
+  .footer-grid,
   .motion-grid,
   .team-grid,
   .video-grid,
@@ -846,6 +899,10 @@ h3 {
     left: 24px;
     right: 24px;
     bottom: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
   }
 }
 

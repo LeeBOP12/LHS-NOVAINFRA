@@ -15,9 +15,9 @@
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
 
     <nav class="site-nav" aria-label="Navegacion principal">
@@ -108,7 +108,7 @@
       <div class="motion-grid">
         <div class="motion-frame reveal" aria-label="Escena visual de infraestructura">
           <img src="assets/images/hero-peru-infraestructura.png" alt="Ingenieros supervisando infraestructura en Peru">
-          <span class="scan-line"></span>
+          <span class="scan-line" aria-hidden="true"></span>
         </div>
         <div class="motion-copy reveal">
           <p class="eyebrow">Ingenieria en movimiento</p>
@@ -314,9 +314,43 @@
   </main>
 
   <footer class="site-footer">
-    <img class="footer-logo" src="assets/images/logo-lhs-clean-full.png" alt="Logo completo LHS NOVA INFRA">
-    <p>Ingenieria, consultoria, construccion e ingenieria ambiental.</p>
-    <small>© 2026 LHS NOVA INFRA. Todos los derechos reservados.</small>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/images/logo-lhs-clean-full.png" alt="Logo completo LHS NOVA INFRA">
+        <p>
+          Ingenieria, consultoria, construccion e ingenieria ambiental para proyectos de infraestructura con enfoque tecnico, seguro y sostenible.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Empresa</h3>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#areas">Areas principales</a>
+        <a href="#proyectos">Proyectos</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Servicios</h3>
+        <a href="#servicios">Ingenieria y consultoria</a>
+        <a href="#servicios">Diseno y construccion</a>
+        <a href="#servicios">BIM y tecnologia</a>
+        <a href="#servicios">Supervision de proyectos</a>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h3>Contacto</h3>
+        <p><strong>WhatsApp:</strong> +51 XXX XXX XXX</p>
+        <p><strong>Correo:</strong> contacto@lhsnovainfra.com</p>
+        <p><strong>Direccion:</strong> Ciudad, Peru</p>
+        <p><strong>Redes:</strong> LinkedIn | Facebook | Instagram</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>© 2026 LHS NOVA INFRA. Todos los derechos reservados.</small>
+      <small>Sitio web corporativo en desarrollo.</small>
+    </div>
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/51XXXXXXXXX" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
