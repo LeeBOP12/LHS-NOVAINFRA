@@ -58,22 +58,36 @@ const revealObserver = new IntersectionObserver(
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
-const slides = document.querySelectorAll(".carousel-slide");
-const prevButton = document.querySelector(".carousel-button.prev");
-const nextButton = document.querySelector(".carousel-button.next");
-let activeSlide = 0;
+function setupCarousel(carousel) {
+  const track = carousel.querySelector(".carousel-track, .media-carousel-track");
+  const slides = carousel.querySelectorAll(".carousel-slide, .media-slide");
+  const prevButton = carousel.querySelector(".carousel-button.prev");
+  const nextButton = carousel.querySelector(".carousel-button.next");
+  const isHorizontal = carousel.classList.contains("media-carousel");
+  let activeSlide = 0;
 
-function showSlide(index) {
-  if (!slides.length) return;
+  function showSlide(index) {
+    if (!slides.length) return;
 
-  slides[activeSlide].classList.remove("is-active");
-  activeSlide = (index + slides.length) % slides.length;
-  slides[activeSlide].classList.add("is-active");
-}
+    activeSlide = (index + slides.length) % slides.length;
 
-if (slides.length && prevButton && nextButton) {
+    if (isHorizontal && track) {
+      track.style.transform = `translateX(-${activeSlide * 100}%)`;
+      return;
+    }
+
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === activeSlide);
+    });
+  }
+
+  if (!slides.length || !prevButton || !nextButton) return;
+
   prevButton.addEventListener("click", () => showSlide(activeSlide - 1));
   nextButton.addEventListener("click", () => showSlide(activeSlide + 1));
-  setInterval(() => showSlide(activeSlide + 1), 5200);
+  setInterval(() => showSlide(activeSlide + 1), 5400);
+  showSlide(0);
 }
+
+document.querySelectorAll(".carousel, .media-carousel").forEach(setupCarousel);
 

@@ -453,6 +453,78 @@ h3 {
   font-weight: 800;
 }
 
+.media-carousel {
+  position: relative;
+  margin-top: 34px;
+  overflow: hidden;
+  min-height: 430px;
+  background: var(--navy);
+  box-shadow: var(--shadow);
+}
+
+.media-carousel.compact {
+  margin-top: 38px;
+  min-height: 390px;
+}
+
+.media-carousel-track {
+  display: flex;
+  min-height: inherit;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.media-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-height: inherit;
+  overflow: hidden;
+}
+
+.media-slide img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 5s ease;
+}
+
+.media-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 43, 69, 0.9), rgba(0, 43, 69, 0.25)),
+    linear-gradient(0deg, rgba(0, 26, 42, 0.46), transparent 55%);
+}
+
+.media-slide div {
+  position: absolute;
+  left: clamp(26px, 4vw, 54px);
+  bottom: clamp(28px, 4vw, 50px);
+  z-index: 2;
+  max-width: 620px;
+  color: var(--white);
+}
+
+.media-slide span {
+  color: #9ddb8d;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.media-slide h3 {
+  margin: 10px 0 0;
+  font-size: clamp(1.8rem, 3.6vw, 3.25rem);
+  line-height: 1.04;
+}
+
+.media-carousel:hover .media-slide img {
+  transform: scale(1.07);
+}
+
 .motion-section {
   color: var(--white);
   background:
@@ -594,6 +666,13 @@ h3 {
   font-size: 2rem;
   cursor: pointer;
   transform: translateY(-50%);
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.carousel-button:hover {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: var(--green);
+  transform: translateY(-50%) scale(1.06);
 }
 
 .carousel-button.prev {
@@ -730,47 +809,6 @@ h3 {
   background: var(--soft);
 }
 
-.video-section {
-  background: #fbfdfc;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.video-card {
-  border: 1px solid var(--line);
-  background: var(--white);
-  box-shadow: 0 16px 42px rgba(0, 43, 69, 0.08);
-  overflow: hidden;
-}
-
-.video-card video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  display: block;
-  object-fit: cover;
-  background: var(--navy);
-}
-
-.video-card h3,
-.video-card p {
-  padding-left: 22px;
-  padding-right: 22px;
-}
-
-.video-card h3 {
-  margin-top: 22px;
-}
-
-.video-card p {
-  padding-bottom: 24px;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
 .team-card {
   margin: 0;
   min-height: 420px;
@@ -876,7 +914,6 @@ h3 {
   .footer-grid,
   .motion-grid,
   .team-grid,
-  .video-grid,
   .service-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -891,7 +928,9 @@ h3 {
   }
 
   .carousel,
-  .carousel-slide img {
+  .carousel-slide img,
+  .media-carousel,
+  .media-slide img {
     min-height: 430px;
   }
 
@@ -974,6 +1013,15 @@ h3 {
     width: 38px;
     height: 38px;
     font-size: 1.5rem;
+  }
+
+  .media-carousel,
+  .media-carousel.compact {
+    min-height: 360px;
+  }
+
+  .media-slide h3 {
+    font-size: clamp(1.55rem, 8vw, 2.25rem);
   }
 }
 
