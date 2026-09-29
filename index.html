@@ -251,7 +251,10 @@
     <section class="section projects" id="proyectos">
       <div class="section-header reveal">
         <p class="eyebrow">Proyectos e imagenes</p>
-        <h2>Una muestra visual de infraestructura, tecnologia y trabajo en campo.</h2>
+        <h2>Galeria preparada para mostrar proyectos reales y trabajo en campo.</h2>
+        <p>
+          Esta seccion puede actualizarse con fotografias reales de obras, supervisiones, equipos tecnicos y avances de proyecto cuando la empresa entregue su material.
+        </p>
       </div>
 
       <div class="carousel reveal" aria-label="Carrusel de imagenes corporativas">
@@ -261,28 +264,28 @@
             <img src="assets/images/hero-peru-infraestructura.png" alt="Ingenieros en obra de infraestructura">
             <div>
               <span>Infraestructura</span>
-              <h3>Supervision tecnica en campo</h3>
+              <h3>Espacio para proyecto de infraestructura</h3>
             </div>
           </article>
           <article class="carousel-slide">
             <img src="assets/images/equipo-ingenieria-peru.png" alt="Equipo de ingenieria revisando planos">
             <div>
               <span>Consultoria</span>
-              <h3>Gestion y coordinacion profesional</h3>
+              <h3>Espacio para consultoria y coordinacion</h3>
             </div>
           </article>
           <article class="carousel-slide">
             <img src="assets/images/diseno-construccion-peru.png" alt="Ingenieros revisando diseno y construccion">
             <div>
               <span>Diseno y construccion</span>
-              <h3>Planificacion visual para presentar mejor la propuesta</h3>
+              <h3>Espacio para diseno y ejecucion de obra</h3>
             </div>
           </article>
           <article class="carousel-slide">
             <img src="assets/images/energia-hidrocarburos-peru.png" alt="Equipo tecnico en instalaciones de energia e hidrocarburos">
             <div>
               <span>Energia e hidrocarburos</span>
-              <h3>Ingenieria para sectores de alta responsabilidad</h3>
+              <h3>Espacio para sectores industriales y energia</h3>
             </div>
           </article>
         </div>
@@ -342,17 +345,43 @@
 
     <section class="section contact" id="contacto">
       <div class="contact-card reveal">
-        <div>
+        <div class="contact-copy">
           <p class="eyebrow">Contacto</p>
           <h2>Hablemos de tu proximo proyecto.</h2>
-          <p>Completar con datos finales del cliente antes de publicar.</p>
+          <p>Completar con los datos finales del cliente antes de publicar la web.</p>
+          <ul class="contact-list">
+            <li><strong>WhatsApp:</strong> +51 XXX XXX XXX</li>
+            <li><strong>Correo:</strong> contacto@lhsnovainfra.com</li>
+            <li><strong>Direccion:</strong> Ciudad, Peru</li>
+            <li><strong>Redes:</strong> LinkedIn | Facebook | Instagram</li>
+          </ul>
         </div>
-        <ul class="contact-list">
-          <li><strong>WhatsApp:</strong> +51 XXX XXX XXX</li>
-          <li><strong>Correo:</strong> contacto@lhsnovainfra.com</li>
-          <li><strong>Direccion:</strong> Ciudad, Pais</li>
-          <li><strong>Redes:</strong> LinkedIn | Facebook | Instagram</li>
-        </ul>
+        <form class="contact-form" data-whatsapp="51XXXXXXXXX">
+          <label>
+            Nombre
+            <input type="text" name="nombre" placeholder="Tu nombre o empresa" required>
+          </label>
+          <label>
+            Telefono o correo
+            <input type="text" name="contacto" placeholder="+51 999 999 999 / correo@empresa.com" required>
+          </label>
+          <label>
+            Servicio de interes
+            <select name="servicio" required>
+              <option value="">Seleccionar servicio</option>
+              <option>Ingenieria y consultoria</option>
+              <option>Diseno y construccion</option>
+              <option>BIM y tecnologia digital</option>
+              <option>Supervision de proyectos</option>
+              <option>Ingenieria ambiental</option>
+            </select>
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="4" placeholder="Cuentanos brevemente sobre tu proyecto" required></textarea>
+          </label>
+          <button class="button primary form-button" type="submit">Enviar por WhatsApp</button>
+        </form>
       </div>
     </section>
   </main>
@@ -397,8 +426,8 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/51XXXXXXXXX" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    WA
+  <a class="whatsapp-float" href="#contacto" aria-label="Ir al formulario de contacto por WhatsApp">
+    <img src="assets/images/whatsapp-icon.svg" alt="">
   </a>
 
   <script src="js/main.js"></script>

@@ -91,3 +91,28 @@ function setupCarousel(carousel) {
 
 document.querySelectorAll(".carousel, .media-carousel").forEach(setupCarousel);
 
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const whatsappNumber = contactForm.dataset.whatsapp || "";
+    const cleanNumber = whatsappNumber.replace(/\D/g, "");
+    const message = [
+      "Hola, vengo desde la web de LHS NOVA INFRA.",
+      `Nombre: ${formData.get("nombre")}`,
+      `Contacto: ${formData.get("contacto")}`,
+      `Servicio de interes: ${formData.get("servicio")}`,
+      `Mensaje: ${formData.get("mensaje")}`
+    ].join("\n");
+
+    const whatsappUrl = whatsappNumber.includes("X") || cleanNumber.length < 8
+      ? `https://wa.me/?text=${encodeURIComponent(message)}`
+      : `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank", "noopener");
+  });
+}
+
