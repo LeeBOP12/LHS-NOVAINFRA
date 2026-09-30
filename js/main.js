@@ -3,6 +3,23 @@ const siteNav = document.querySelector(".site-nav");
 const siteHeader = document.querySelector(".site-header");
 const hero = document.querySelector(".hero");
 const heroContent = document.querySelector(".hero-content");
+const heroVideo = document.querySelector(".hero-video");
+
+function playHeroVideo() {
+  if (!heroVideo) return;
+
+  heroVideo.muted = true;
+  heroVideo.play().catch(() => {
+    heroVideo.setAttribute("controls", "");
+  });
+}
+
+playHeroVideo();
+window.addEventListener("load", playHeroVideo);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) playHeroVideo();
+});
+document.addEventListener("click", playHeroVideo, { once: true });
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
@@ -100,13 +117,22 @@ if (contactForm) {
     const formData = new FormData(contactForm);
     const whatsappNumber = contactForm.dataset.whatsapp || "";
     const cleanNumber = whatsappNumber.replace(/\D/g, "");
-    const message = [
+    const ubicacion = String(formData.get("ubicacion") || "").trim();
+    const messageLines = [
       "Hola, vengo desde la web de LHS NOVA INFRA.",
       `Nombre: ${formData.get("nombre")}`,
       `Contacto: ${formData.get("contacto")}`,
       `Servicio de interes: ${formData.get("servicio")}`,
-      `Mensaje: ${formData.get("mensaje")}`
-    ].join("\n");
+      `Etapa del proyecto: ${formData.get("etapa")}`
+    ];
+
+    if (ubicacion) {
+      messageLines.push(`Ubicacion aproximada: ${ubicacion}`);
+    }
+
+    messageLines.push(`Mensaje: ${formData.get("mensaje")}`);
+
+    const message = messageLines.join("\n");
 
     const whatsappUrl = whatsappNumber.includes("X") || cleanNumber.length < 8
       ? `https://wa.me/?text=${encodeURIComponent(message)}`
