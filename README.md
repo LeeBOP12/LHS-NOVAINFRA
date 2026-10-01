@@ -226,6 +226,21 @@ Editar en `index.html`:
 
 Usar número con código de país y sin espacios.
 
+### Cambiar redes sociales
+
+Por ahora el footer tiene íconos referenciales con enlaces temporales a contacto. Las redes preparadas son LinkedIn, Facebook e Instagram. WhatsApp se mantiene como botón flotante para evitar duplicar el mismo canal:
+
+```html
+<a class="social-link" href="#contacto" aria-label="LinkedIn pendiente">
+```
+
+Cuando el cliente confirme sus redes, reemplazar cada `href="#contacto"` por el enlace real de la red correspondiente. Recomendación:
+
+- guardar los logos en `assets/images/` o crear `assets/icons/` si serán varios;
+- usar archivos `.svg` oficiales cuando existan;
+- enlazar cada red con su URL final;
+- no publicar redes que todavía no estén activas.
+
 ## Decisiones técnicas
 
 ### Por qué se modularizo solo el modal
@@ -266,6 +281,62 @@ Importante:
 - conservar las rutas relativas;
 - publicar desde la raíz del proyecto;
 - probar con Live Server o servidor local, no solo con doble clic al HTML.
+
+## Datos que faltan pedir al cliente
+
+Estos datos reemplazan placeholders o información provisional de la web.
+
+### Identidad y marca
+
+- Logo final en buena calidad, idealmente PNG transparente y SVG si lo tienen.
+- Confirmar paleta oficial: azul `#002B45`, verde `#2E7D32` y blanco `#FFFFFF`.
+- Confirmar si el nombre se escribe siempre como `LHS NOVA INFRA` o `LHS NOVAINFRA`.
+- Favicon o isotipo para la pestaña del navegador.
+
+### Contacto real
+
+- WhatsApp empresarial con código de país.
+- Correo corporativo.
+- Dirección fiscal o dirección comercial que sí pueda publicarse.
+- Horario de atención.
+- Persona o área que recibirá los mensajes del formulario.
+
+### Redes sociales
+
+- Redes que sí usarán: LinkedIn, Facebook e Instagram.
+- WhatsApp empresarial para el botón flotante y el formulario de contacto.
+- URL exacta de cada perfil.
+- Confirmar si ya se pueden mostrar públicamente.
+- Logos oficiales o autorización para usar los íconos oficiales de cada red.
+
+### Clientes y proyectos
+
+- Logos reales de clientes o aliados autorizados para publicación.
+- Fotos reales de obras, supervisión, equipo, maquinaria o campo.
+- Nombres de proyectos que sí se puedan mencionar.
+- Breve descripción de cada proyecto: ubicación, servicio realizado y resultado.
+- Confirmar si se deben ocultar clientes o proyectos por confidencialidad.
+
+### Equipo
+
+- Fotos reales de gerentes, ingenieros o responsables principales.
+- Nombre, cargo y una frase corta por persona.
+- Confirmar si quieren mostrar personas reales o solo equipo general.
+
+### Servicios
+
+- Confirmar lista final de servicios.
+- Actividades específicas que quieren ofrecer en cada servicio.
+- Servicios más importantes para poner primero.
+- Servicios que todavía no quieren publicar.
+
+### Documentos y publicación
+
+- Brochure PDF final.
+- Dominio deseado, por ejemplo `lhsnovainfra.com`.
+- Hosting elegido o presupuesto para hosting.
+- Confirmar si desean correo corporativo con dominio propio.
+- Confirmar textos legales básicos: privacidad, uso de datos y copyright.
 
 ## Pendientes recomendados
 
