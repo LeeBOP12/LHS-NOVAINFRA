@@ -45,6 +45,7 @@
         <div class="hero-actions">
           <a href="#servicios" class="button primary">Ver servicios</a>
           <a href="#contacto" class="button secondary">Solicitar informacion</a>
+          <a href="assets/docs/brochure-lhs-novainfra.pdf" class="button brochure-button" download>Descargar brochure</a>
         </div>
         <div class="hero-metrics" aria-label="Resumen empresarial">
           <div>
@@ -58,6 +59,10 @@
           <div>
             <strong>Soluciones integrales</strong>
             <span>Consultoria, obra, BIM y sostenibilidad</span>
+          </div>
+          <div>
+            <strong>BIM</strong>
+            <span>Modelado y coordinacion digital del proyecto</span>
           </div>
         </div>
       </div>
@@ -80,7 +85,7 @@
         </div>
 
         <figure class="about-image reveal">
-          <img src="assets/images/equipo-ingenieria-peru.png" alt="Equipo tecnico de ingenieria revisando planos">
+          <img src="assets/images/nosotros-bim-coordinacion-peru.png" alt="Equipo de ingenieria coordinando proyecto con metodologia BIM">
         </figure>
       </div>
 
@@ -100,6 +105,27 @@
           <h3>Menos improvisacion, mas control.</h3>
           <p>Planificacion, supervision y comunicacion clara para reducir riesgos desde las primeras decisiones del proyecto.</p>
         </article>
+      </div>
+
+      <div class="faq-panel reveal">
+        <div class="about-questions" aria-label="Preguntas clave sobre LHS NOVA INFRA">
+          <details class="question-card" open>
+            <summary><span>01</span> Por que elegirnos?</summary>
+            <p>Porque ordenamos el alcance, anticipamos riesgos y ayudamos a que el proyecto avance con decisiones tecnicas claras desde el inicio.</p>
+          </details>
+          <details class="question-card">
+            <summary><span>02</span> Como cuidamos tu inversion?</summary>
+            <p>Reducimos improvisaciones, reprocesos y decisiones tardias mediante planificacion, supervision y seguimiento tecnico constante.</p>
+          </details>
+          <details class="question-card">
+            <summary><span>03</span> Que nos hace diferentes?</summary>
+            <p>Integramos ingenieria, consultoria, BIM, construccion y sostenibilidad en una misma mirada de proyecto.</p>
+          </details>
+          <details class="question-card">
+            <summary><span>04</span> Como sabras que avanza bien?</summary>
+            <p>Con comunicacion directa, criterios de control definidos y reportes que ayudan a tomar decisiones oportunas.</p>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -130,55 +156,63 @@
         <p class="eyebrow">Servicios destacados</p>
         <h2>Soluciones integrales para proyectos que necesitan control, precision y respaldo tecnico.</h2>
       </div>
-      <div class="service-grid visual-services">
-        <article class="service-card reveal">
+
+      <div class="services-interactive reveal" aria-label="Servicios destacados interactivos">
+        <article class="service-card" data-service="diseno" role="button" tabindex="0" aria-expanded="false" aria-label="Ver alcance de Diseno y construccion">
           <img src="assets/images/diseno-construccion-peru.png" alt="Ingenieros revisando diseno y construccion">
           <div>
-            <span>01</span>
+            <span class="service-number">01</span>
             <h3>Diseno y construccion</h3>
             <p>Planificacion y ejecucion de obras con criterio tecnico, coordinacion y seguimiento de avance.</p>
+            <span class="service-link">Ver alcance</span>
           </div>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card" data-service="bim" role="button" tabindex="0" aria-expanded="false" aria-label="Ver alcance de BIM y tecnologia digital">
           <img src="assets/images/bim-tecnologia-peru.png" alt="Equipo trabajando con modelos BIM">
           <div>
-            <span>02</span>
+            <span class="service-number">02</span>
             <h3>BIM y tecnologia digital</h3>
             <p>Modelado, coordinacion y revision digital para anticipar interferencias y optimizar decisiones.</p>
+            <span class="service-link">Ver alcance</span>
           </div>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card" data-service="seguridad" role="button" tabindex="0" aria-expanded="false" aria-label="Ver alcance de Seguridad, calidad y cumplimiento">
           <img src="assets/images/seguridad-calidad-peru.png" alt="Equipo tecnico revisando seguridad y calidad">
           <div>
-            <span>03</span>
+            <span class="service-number">03</span>
             <h3>Seguridad, calidad y cumplimiento</h3>
             <p>Control de procesos, criterios de seguridad y verificacion tecnica para proteger cada etapa.</p>
+            <span class="service-link">Ver alcance</span>
           </div>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card" data-service="ambiental" role="button" tabindex="0" aria-expanded="false" aria-label="Ver alcance de Ingenieria ambiental">
           <img src="assets/images/sostenibilidad-ambiental-peru.png" alt="Infraestructura con enfoque ambiental">
           <div>
-            <span>04</span>
+            <span class="service-number">04</span>
             <h3>Ingenieria ambiental</h3>
             <p>Soluciones responsables con enfoque sostenible, cumplimiento normativo y gestion ambiental.</p>
+            <span class="service-link">Ver alcance</span>
           </div>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card" data-service="mantenimiento" role="button" tabindex="0" aria-expanded="false" aria-label="Ver alcance de Electromecanica y mantenimiento">
           <img src="assets/images/electromecanica-mantenimiento-peru.png" alt="Mantenimiento electromecanico en infraestructura">
           <div>
-            <span>05</span>
+            <span class="service-number">05</span>
             <h3>Electromecanica y mantenimiento</h3>
             <p>Soporte para activos e infraestructura con enfoque preventivo, operativo y de continuidad.</p>
+            <span class="service-link">Ver alcance</span>
           </div>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card" data-service="infraestructura" role="button" tabindex="0" aria-expanded="false" aria-label="Ver alcance de Infraestructura civil, industrial y minera">
           <img src="assets/images/mineria-industria-peru.png" alt="Infraestructura industrial y minera">
           <div>
-            <span>06</span>
+            <span class="service-number">06</span>
             <h3>Infraestructura civil, industrial y minera</h3>
             <p>Capacidad tecnica para sectores exigentes donde el control y la seguridad son determinantes.</p>
+            <span class="service-link">Ver alcance</span>
           </div>
         </article>
+
       </div>
     </section>
 
@@ -256,32 +290,122 @@
       </div>
     </section>
 
+    <section class="section clients" id="clientes">
+      <div class="section-header reveal">
+        <p class="eyebrow">Clientes</p>
+        <h2>Confianza que crece con cada proyecto.</h2>
+        <p>Un espacio preparado para mostrar las marcas que acompanaran el crecimiento de LHS NOVA INFRA.</p>
+      </div>
+
+      <div class="client-marquee reveal" aria-label="Carrusel de logos de clientes pendientes">
+        <div class="client-track">
+          <span>Cliente 01</span>
+          <span>Cliente 02</span>
+          <span>Cliente 03</span>
+          <span>Cliente 04</span>
+          <span>Cliente 05</span>
+          <span>Cliente 06</span>
+          <span aria-hidden="true">Cliente 01</span>
+          <span aria-hidden="true">Cliente 02</span>
+          <span aria-hidden="true">Cliente 03</span>
+          <span aria-hidden="true">Cliente 04</span>
+          <span aria-hidden="true">Cliente 05</span>
+          <span aria-hidden="true">Cliente 06</span>
+        </div>
+      </div>
+    </section>
+
     <section class="section team" id="equipo">
-      <div class="team-grid refined-team">
-        <figure class="team-card reveal">
-          <img src="assets/images/equipo-ingenieria-peru.png" alt="Equipo profesional de LHS NOVA INFRA">
-        </figure>
-        <article class="team-copy reveal">
+      <div class="team-heading reveal">
+        <div>
           <p class="eyebrow">Equipo y confianza</p>
-          <h2>Un equipo tecnico que comunica claro y trabaja con metodo.</h2>
-          <p>
-            La confianza no se construye con promesas, sino con seguimiento, reportes claros y decisiones tecnicas bien sustentadas.
-          </p>
-          <div class="trust-grid">
-            <div>
-              <strong>Control</strong>
-              <span>Planificacion, supervision y trazabilidad.</span>
-            </div>
-            <div>
-              <strong>Coordinacion</strong>
-              <span>Equipos alineados antes y durante la ejecucion.</span>
-            </div>
-            <div>
-              <strong>Cumplimiento</strong>
-              <span>Seguridad, calidad y responsabilidad ambiental.</span>
-            </div>
+          <h2>El rostro tecnico detras de cada solucion.</h2>
+        </div>
+        <p>
+          Aqui se presentaran las personas que lideran gerencia, obra, BIM, seguridad y sostenibilidad. Por ahora usamos imagenes referenciales para visualizar el formato final.
+        </p>
+      </div>
+
+      <div class="people-fade-shell reveal">
+        <div class="people-carousel" aria-label="Carrusel automatico del equipo de trabajo">
+          <div class="people-track">
+            <article class="people-card">
+              <img src="assets/images/equipo-ingenieria-peru.png" alt="Representante del equipo de gerencia de proyectos">
+              <span class="people-role">Gerencia tecnica</span>
+              <h3>Liderazgo que ordena el proyecto.</h3>
+              <p>Direccion, prioridades claras y decisiones con sustento.</p>
+            </article>
+            <article class="people-card">
+              <img src="assets/images/supervision-obra-peru.png" alt="Ingeniero de supervision de obra">
+              <span class="people-role">Supervision</span>
+              <h3>Ingenieria que pisa campo.</h3>
+              <p>Control de avance, calidad y seguridad en obra.</p>
+            </article>
+            <article class="people-card">
+              <img src="assets/images/nosotros-bim-coordinacion-peru.png" alt="Especialista BIM coordinando proyecto">
+              <span class="people-role">BIM</span>
+              <h3>Decidir antes de construir.</h3>
+              <p>Coordinacion digital para evitar interferencias.</p>
+            </article>
+            <article class="people-card">
+              <img src="assets/images/seguridad-calidad-peru.png" alt="Responsable de seguridad y calidad">
+              <span class="people-role">Calidad y seguridad</span>
+              <h3>Control que protege la obra.</h3>
+              <p>Procesos claros, cumplimiento y seguimiento.</p>
+            </article>
+            <article class="people-card">
+              <img src="assets/images/sostenibilidad-ambiental-peru.png" alt="Especialista ambiental de infraestructura">
+              <span class="people-role">Sostenibilidad</span>
+              <h3>Infraestructura con responsabilidad.</h3>
+              <p>Criterios ambientales desde la idea hasta la entrega.</p>
+            </article>
+            <article class="people-card" aria-hidden="true">
+              <img src="assets/images/equipo-ingenieria-peru.png" alt="">
+              <span class="people-role">Gerencia tecnica</span>
+              <h3>Liderazgo que ordena el proyecto.</h3>
+              <p>Direccion, prioridades claras y decisiones con sustento.</p>
+            </article>
+            <article class="people-card" aria-hidden="true">
+              <img src="assets/images/supervision-obra-peru.png" alt="">
+              <span class="people-role">Supervision</span>
+              <h3>Ingenieria que pisa campo.</h3>
+              <p>Control de avance, calidad y seguridad en obra.</p>
+            </article>
+            <article class="people-card" aria-hidden="true">
+              <img src="assets/images/nosotros-bim-coordinacion-peru.png" alt="">
+              <span class="people-role">BIM</span>
+              <h3>Decidir antes de construir.</h3>
+              <p>Coordinacion digital para evitar interferencias.</p>
+            </article>
+            <article class="people-card" aria-hidden="true">
+              <img src="assets/images/seguridad-calidad-peru.png" alt="">
+              <span class="people-role">Calidad y seguridad</span>
+              <h3>Control que protege la obra.</h3>
+              <p>Procesos claros, cumplimiento y seguimiento.</p>
+            </article>
+            <article class="people-card" aria-hidden="true">
+              <img src="assets/images/sostenibilidad-ambiental-peru.png" alt="">
+              <span class="people-role">Sostenibilidad</span>
+              <h3>Infraestructura con responsabilidad.</h3>
+              <p>Criterios ambientales desde la idea hasta la entrega.</p>
+            </article>
           </div>
-        </article>
+        </div>
+      </div>
+
+      <div class="trust-grid reveal">
+        <div>
+          <strong>Control</strong>
+          <span>Planificacion, supervision y trazabilidad.</span>
+        </div>
+        <div>
+          <strong>Coordinacion</strong>
+          <span>Equipos alineados antes y durante la ejecucion.</span>
+        </div>
+        <div>
+          <strong>Cumplimiento</strong>
+          <span>Seguridad, calidad y responsabilidad ambiental.</span>
+        </div>
       </div>
     </section>
 
@@ -297,6 +421,20 @@
             <span>Respuesta directa</span>
             <span>Consulta inicial clara</span>
             <span>Canal empresarial</span>
+          </div>
+          <div class="contact-methods">
+            <div>
+              <strong>WhatsApp empresarial</strong>
+              <span>Pendiente de confirmar</span>
+            </div>
+            <div>
+              <strong>Correo corporativo</strong>
+              <span>Pendiente de confirmar</span>
+            </div>
+            <div>
+              <strong>Brochure corporativo</strong>
+              <a href="assets/docs/brochure-lhs-novainfra.pdf" download>Descargar PDF</a>
+            </div>
           </div>
         </div>
 
@@ -349,6 +487,21 @@
     </section>
   </main>
 
+  <div class="service-modal" hidden aria-hidden="true">
+    <div class="service-modal-backdrop" data-close-service></div>
+    <section class="service-modal-card" role="dialog" aria-modal="true" aria-labelledby="service-detail-title">
+      <button class="service-modal-close" type="button" data-close-service aria-label="Cerrar ventana">X</button>
+      <header class="service-modal-header">
+        <p class="eyebrow">Alcance tecnico</p>
+        <span class="detail-number" id="service-detail-number"></span>
+        <h3 id="service-detail-title"></h3>
+      </header>
+      <p id="service-detail-text"></p>
+      <ul id="service-detail-list"></ul>
+      <a class="button primary" href="#contacto">Solicitar este servicio</a>
+    </section>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -356,6 +509,12 @@
         <p>
           Ingenieria, consultoria, construccion e ingenieria ambiental para proyectos de infraestructura con enfoque tecnico, seguro y sostenible.
         </p>
+        <div class="social-links" aria-label="Redes sociales oficiales pendientes">
+          <span class="social-link linkedin" aria-label="LinkedIn">in</span>
+          <span class="social-link facebook" aria-label="Facebook">f</span>
+          <span class="social-link instagram" aria-label="Instagram">ig</span>
+          <span class="social-link youtube" aria-label="YouTube">yt</span>
+        </div>
       </div>
 
       <div class="footer-column">
@@ -378,6 +537,7 @@
         <h3>Iniciar proyecto</h3>
         <p>Cuéntanos qué necesitas resolver y preparemos una primera conversación técnica.</p>
         <a class="footer-button" href="#contacto">Ir a contacto</a>
+        <a class="footer-button ghost" href="assets/docs/brochure-lhs-novainfra.pdf" download>Descargar brochure</a>
       </div>
     </div>
 
