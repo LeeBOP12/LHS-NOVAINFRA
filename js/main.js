@@ -123,11 +123,11 @@ questionCards.forEach((question) => {
 const serviceDetails = {
   diseno: {
     number: "01",
-    title: "Diseno y construccion",
+    title: "Diseño y construccion",
     text: "Servicio orientado a convertir una necesidad tecnica en una solucion construible, coordinada y controlada desde la planificacion hasta la ejecucion.",
     items: [
       "Revision de alcance, criterios tecnicos y prioridades del proyecto.",
-      "Coordinacion entre diseno, presupuesto, programacion y ejecucion.",
+      "Coordinacion entre diseño, presupuesto, programacion y ejecucion.",
       "Seguimiento de avance para reducir improvisaciones en campo."
     ]
   },
