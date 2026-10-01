@@ -1,3 +1,5 @@
+import './modules/service-modal.js';
+
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const siteHeader = document.querySelector(".site-header");
@@ -13,7 +15,6 @@ function playHeroVideo() {
     heroVideo.setAttribute("controls", "");
   });
 }
-
 playHeroVideo();
 window.addEventListener("load", playHeroVideo);
 document.addEventListener("visibilitychange", () => {
@@ -108,162 +109,32 @@ function setupCarousel(carousel) {
 
 document.querySelectorAll(".carousel, .media-carousel").forEach(setupCarousel);
 
-const questionCards = Array.from(document.querySelectorAll(".question-card"));
+const questionPieces = Array.from(document.querySelectorAll(".question-piece"));
 
-questionCards.forEach((question) => {
-  question.addEventListener("toggle", () => {
-    if (!question.open) return;
+function selectQuestionPiece(index) {
+  questionPieces.forEach((piece, pieceIndex) => {
+    const isActive = pieceIndex === index;
+    const action = piece.querySelector(".piece-action");
+    const answer = piece.querySelector(".piece-answer");
 
-    questionCards.forEach((item) => {
-      if (item !== question) item.open = false;
-    });
+    piece.classList.toggle("is-active", isActive);
+    piece.setAttribute("aria-pressed", String(isActive));
+    piece.setAttribute("aria-expanded", String(isActive));
+    if (action) action.textContent = isActive ? "−" : "+";
+    if (answer) answer.setAttribute("aria-hidden", String(!isActive));
   });
-});
-
-const serviceDetails = {
-  diseno: {
-    number: "01",
-    title: "Diseño y construccion",
-    text: "Servicio orientado a convertir una necesidad tecnica en una solucion construible, coordinada y controlada desde la planificacion hasta la ejecucion.",
-    items: [
-      "Revision de alcance, criterios tecnicos y prioridades del proyecto.",
-      "Coordinacion entre diseño, presupuesto, programacion y ejecucion.",
-      "Seguimiento de avance para reducir improvisaciones en campo."
-    ]
-  },
-  bim: {
-    number: "02",
-    title: "BIM y tecnologia digital",
-    text: "Uso de herramientas digitales para mejorar la coordinacion, visualizar decisiones y anticipar interferencias antes de que generen costos en obra.",
-    items: [
-      "Modelado, revision y compatibilizacion de informacion tecnica.",
-      "Apoyo visual para reuniones, coordinacion y toma de decisiones.",
-      "Mayor trazabilidad del proyecto y sus entregables."
-    ]
-  },
-  seguridad: {
-    number: "03",
-    title: "Seguridad, calidad y cumplimiento",
-    text: "Control tecnico para que el proyecto avance con estandares claros, cuidando la seguridad, la calidad y el cumplimiento aplicable.",
-    items: [
-      "Verificacion de procesos, documentos y criterios de control.",
-      "Identificacion temprana de riesgos tecnicos y operativos.",
-      "Soporte para reportes, seguimiento y cierre de observaciones."
-    ]
-  },
-  ambiental: {
-    number: "04",
-    title: "Ingenieria ambiental",
-    text: "Soluciones con mirada sostenible para que la infraestructura se desarrolle con responsabilidad ambiental y criterio normativo.",
-    items: [
-      "Gestion ambiental vinculada al alcance del proyecto.",
-      "Criterios de sostenibilidad para diseno, obra y operacion.",
-      "Acompanamiento en cumplimiento y mejora continua."
-    ]
-  },
-  mantenimiento: {
-    number: "05",
-    title: "Electromecanica y mantenimiento",
-    text: "Soporte tecnico para conservar activos operativos, reducir fallas y asegurar continuidad en infraestructura y sistemas electromecanicos.",
-    items: [
-      "Revision de activos, necesidades y prioridades de mantenimiento.",
-      "Enfoque preventivo para reducir interrupciones y costos correctivos.",
-      "Coordinacion tecnica para intervenciones ordenadas y seguras."
-    ]
-  },
-  infraestructura: {
-    number: "06",
-    title: "Infraestructura civil, industrial y minera",
-    text: "Acompanamiento tecnico para proyectos de mayor exigencia, donde la seguridad, continuidad y coordinacion son factores criticos.",
-    items: [
-      "Soporte para infraestructura civil, industrial, minera e hidrocarburos.",
-      "Gestion y supervision para entornos tecnicos exigentes.",
-      "Criterios de calidad, seguridad y sostenibilidad en campo."
-    ]
-  }
-};
-
-const serviceCards = Array.from(document.querySelectorAll("[data-service]"));
-const serviceModal = document.querySelector(".service-modal");
-const serviceModalCloseButtons = document.querySelectorAll("[data-close-service]");
-const serviceDetailNumber = document.querySelector("#service-detail-number");
-const serviceDetailTitle = document.querySelector("#service-detail-title");
-const serviceDetailText = document.querySelector("#service-detail-text");
-const serviceDetailList = document.querySelector("#service-detail-list");
-let activeServiceIndex = -1;
-let lastServiceTrigger;
-
-function updateServiceDetail(serviceKey, index) {
-  const detail = serviceDetails[serviceKey];
-  if (!detail || !serviceModal || !serviceDetailNumber || !serviceDetailTitle || !serviceDetailText || !serviceDetailList) return;
-
-  activeServiceIndex = index;
-  lastServiceTrigger = serviceCards[activeServiceIndex];
-  serviceCards.forEach((card, cardIndex) => {
-    const isActive = cardIndex === activeServiceIndex;
-    card.classList.toggle("is-active", isActive);
-    card.setAttribute("aria-expanded", String(isActive));
-  });
-
-  serviceDetailNumber.textContent = detail.number;
-  serviceDetailTitle.textContent = detail.title;
-  serviceDetailText.textContent = detail.text;
-  serviceDetailList.innerHTML = "";
-
-  detail.items.forEach((item) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = item;
-    serviceDetailList.appendChild(listItem);
-  });
-
-  serviceModal.hidden = false;
-  serviceModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-  serviceModal.classList.remove("is-open");
-  requestAnimationFrame(() => {
-    serviceModal.classList.add("is-open");
-  });
-
-  serviceModal.querySelector(".service-modal-close")?.focus();
 }
 
-serviceCards.forEach((card, index) => {
-  card.addEventListener("click", () => updateServiceDetail(card.dataset.service, index));
-  card.addEventListener("keydown", (event) => {
+questionPieces.forEach((piece, index) => {
+  piece.setAttribute("aria-pressed", String(index === 0));
+  piece.setAttribute("aria-expanded", String(index === 0));
+  piece.addEventListener("click", () => selectQuestionPiece(index));
+  piece.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      updateServiceDetail(card.dataset.service, index);
+      selectQuestionPiece(index);
     }
   });
-});
-
-function closeServiceDetail() {
-  if (!serviceModal) return;
-
-  serviceModal.hidden = true;
-  serviceModal.setAttribute("aria-hidden", "true");
-  serviceModal.classList.remove("is-open");
-  document.body.classList.remove("modal-open");
-  activeServiceIndex = -1;
-
-  serviceCards.forEach((card) => {
-    card.classList.remove("is-active");
-    card.setAttribute("aria-expanded", "false");
-  });
-
-  lastServiceTrigger?.focus();
-}
-
-serviceModalCloseButtons.forEach((button) => {
-  button.addEventListener("click", closeServiceDetail);
-});
-
-serviceModal?.querySelector(".button")?.addEventListener("click", closeServiceDetail);
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && serviceModal && !serviceModal.hidden) {
-    closeServiceDetail();
-  }
 });
 
 const peopleCarousel = document.querySelector(".people-carousel");
@@ -378,4 +249,3 @@ if (contactForm) {
     window.open(whatsappUrl, "_blank", "noopener");
   });
 }
-
