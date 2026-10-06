@@ -19,7 +19,7 @@ export const serviceDetails = {
         items: [
           "Evaluación de alternativas y factibilidad técnica.",
           "Asesoría para licitaciones y términos de referencia.",
-          "Acompañamiento técnico en reuniones y reportes.",
+          "Supervisión y acompañamiento técnico en reuniones y reportes.",
           "Revisión de propuestas y alcances de contratistas.",
           "Gestión de observaciones técnicas."
         ]
@@ -27,10 +27,10 @@ export const serviceDetails = {
       {
         title: "Topografía",
         items: [
-          "Levantamientos topográficos, replanteos y nivelaciones.",
+          "Levantamiento topográfico con drones.",
           "Secciones, perfiles, curvas de nivel y cubicaciones.",
           "Verificación de ejes, cotas y pendientes en obra.",
-          "Control de volúmenes y movimiento de tierras.",
+          "Control de movimiento de tierras.",
           "Planos topográficos y entregables de campo."
         ]
       }
@@ -229,7 +229,9 @@ const serviceGroupIcons = {
   survey: '<svg viewBox="0 0 24 24"><path d="M12 4l7 16H5l7-16z"/><path d="M12 4v16"/><path d="M8 12h8"/></svg>',
   bim: '<svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4 8-4z"/><path d="M4 11l8 4 8-4"/><path d="M4 15l8 4 8-4"/></svg>',
   management: '<svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-7"/></svg>',
-  construction: '<svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20V9l6-5 6 5v11"/><path d="M9 20v-6h6v6"/></svg>',
+  design: '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 17l7-13 3 7-7 6H7z"/><path d="M14 4l6 6"/><path d="M9 13h5"/><path d="M6 20v-3"/></svg>',
+  construction: '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 17V8h9"/><path d="M15 8l4 3-4 3"/><path d="M9 8v12"/><path d="M6 12h3"/><path d="M13 20v-4h4v4"/></svg>',
+  infrastructure: '<svg viewBox="0 0 24 24"><path d="M3 19h18"/><path d="M5 16c3-5 11-5 14 0"/><path d="M7 16V9"/><path d="M17 16V9"/><path d="M7 9h10"/><path d="M10 13h4"/></svg>',
   industry: '<svg viewBox="0 0 24 24"><path d="M4 20V9l5 3V9l5 3V6h6v14H4z"/><path d="M8 16h2"/><path d="M13 16h2"/></svg>',
   maintenance: '<svg viewBox="0 0 24 24"><path d="M14 6l4 4"/><path d="M4 20l7-7"/><path d="M13 5l6 6-3 3-6-6 3-3z"/></svg>',
   environmental: '<svg viewBox="0 0 24 24"><path d="M19 5c-8 0-13 5-13 12"/><path d="M6 17c8 0 13-5 13-12"/></svg>',
@@ -243,7 +245,9 @@ function getServiceGroupIconKey(title) {
   if (normalizedTitle.includes("consultoria")) return "consulting";
   if (normalizedTitle.includes("bim")) return "bim";
   if (normalizedTitle.includes("gestion") || normalizedTitle.includes("epcm") || normalizedTitle.includes("pmc")) return "management";
-  if (normalizedTitle.includes("construccion") || normalizedTitle.includes("infraestructura") || normalizedTitle.includes("diseno")) return "construction";
+  if (normalizedTitle.includes("diseno")) return "design";
+  if (normalizedTitle.includes("construccion")) return "construction";
+  if (normalizedTitle.includes("infraestructura")) return "infrastructure";
   if (normalizedTitle.includes("mineria") || normalizedTitle.includes("energia") || normalizedTitle.includes("industria") || normalizedTitle.includes("control")) return "industry";
   if (normalizedTitle.includes("mantenimiento") || normalizedTitle.includes("suministro") || normalizedTitle.includes("equipamiento")) return "maintenance";
   if (normalizedTitle.includes("ambiental") || normalizedTitle.includes("sostenibilidad")) return "environmental";

@@ -228,14 +228,16 @@ if (contactForm) {
     const ubicacion = String(formData.get("ubicacion") || "").trim();
     const messageLines = [
       "Hola, vengo desde la web de LHS NOVA INFRA.",
+      "Quisiera coordinar una consulta técnica.",
+      "",
       `Nombre: ${formData.get("nombre")}`,
       `Contacto: ${formData.get("contacto")}`,
-      `Servicio de interes: ${formData.get("servicio")}`,
+      `Servicio de interés: ${formData.get("servicio")}`,
       `Etapa del proyecto: ${formData.get("etapa")}`
     ];
 
     if (ubicacion) {
-      messageLines.push(`Ubicacion aproximada: ${ubicacion}`);
+      messageLines.push(`Ubicación aproximada: ${ubicacion}`);
     }
 
     messageLines.push(`Mensaje: ${formData.get("mensaje")}`);
